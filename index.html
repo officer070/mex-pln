@@ -324,7 +324,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--abu);color:var(--t
 const SHEET_ID  = '1thV0gQcG4jM3NrVIs-3zDVNQCSSfFMup_bVlT6tcBbI';
 const CSV_URL   = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&sheet=DATA`;
 // Ganti dengan URL Apps Script setelah deploy
-const API_URL   = 'GANTI_DENGAN_URL_APPS_SCRIPT';
+const API_URL   = 'https://script.google.com/macros/s/AKfycbwoY5tFkBpRYSEoRgCIL5Z1Hb53Dwo31TJrrrXmcbH9xSBFCjYacudCxMI-KQKlStWjiQ/exec';
 
 const UNITS = ['UP3 MDN','UP3 MDU','UP3 BJI','UP3 BBS','UP3 PKM',
                'UP3 PMS','UP3 RTP','UP3 PSP','UP3 SBG','UP3 NIS','UP2D'];
@@ -691,7 +691,7 @@ async function konfirmasiOrder(){
 
     let id='ORD-'+Date.now().toString(36).toUpperCase();
 
-    if(API_URL!=='GANTI_DENGAN_URL_APPS_SCRIPT'){
+    if(API_URL!=='https://script.google.com/macros/s/AKfycbwoY5tFkBpRYSEoRgCIL5Z1Hb53Dwo31TJrrrXmcbH9xSBFCjYacudCxMI-KQKlStWjiQ/exec'){
       const r=await fetch(API_URL+'?'+params.toString());
       const data=await r.json();
       if(data.status==='ok') id=data.id;
